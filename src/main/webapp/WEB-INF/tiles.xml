@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+       
+<tiles-definitions>  
+
+    <!-- Admin Define -->
+    <definition name="admin.definition" template="/WEB-INF/admin/layouts/template.jsp">  
+        <put-attribute name="title" value="" />  
+        <put-attribute name="header" value="/WEB-INF/admin/layouts/_header.jsp" />  
+        <put-attribute name="menu" value="/WEB-INF/admin/layouts/_menu.jsp" />  
+        <put-attribute name="body" value="" />  
+        <put-attribute name="footer" value="/WEB-INF/admin/layouts/_footer.jsp" />  
+    </definition>  
+    
+    <!-- User Define -->
+    <definition name="user.definition" template="/WEB-INF/user/layouts/template.jsp">  
+        <put-attribute name="title" value="" />  
+        <put-attribute name="header" value="/WEB-INF/user/layouts/_header.jsp" />  
+        <put-attribute name="menu" value="/WEB-INF/user/layouts/_menu.jsp" />  
+        <put-attribute name="body" value="" />  
+        <put-attribute name="footer" value="/WEB-INF/user/layouts/_footer.jsp" />  
+    </definition>  
+    
+    <!-- Login Page -->
+    <definition name="loginPage" extends="user.definition">  
+        <put-attribute name="title" value="Login" />  
+        <put-attribute name="body" value="/WEB-INF/user/views/login.jsp" />  
+    </definition>  
+    
+    <!-- Home Page User -->
+    <definition name="userHome" extends="admin.definition">  
+        <put-attribute name="title" value="Home Page User" />  
+        <put-attribute name="body" value="/WEB-INF/user/views/home.jsp" />  
+    </definition>  
+
+    <!-- Home Page Admin -->
+    <definition name="adminHome" extends="admin.definition">  
+        <put-attribute name="title" value="Home Page Admin" />  
+        <put-attribute name="body" value="/WEB-INF/admin/views/home.jsp" />  
+    </definition>  
+ 
+ 	<!-- Add User -->
+    <definition name="addUser" extends="admin.definition">  
+        <put-attribute name="title" value="Add User" />  
+        <put-attribute name="body" value="/WEB-INF/admin/views/addUser.jsp" />  
+    </definition>
+    
+    <!-- Edit User -->
+    <definition name="editUser" extends="admin.definition">  
+        <put-attribute name="title" value="Edit User" />  
+        <put-attribute name="body" value="/WEB-INF/admin/views/editUser.jsp" />  
+    </definition>
+    
+    <definition name="adminAjax" extends="admin.definition">  
+        <put-attribute name="title" value="Home Page Admin" />  
+        <put-attribute name="body" value="/WEB-INF/admin/views/ajax.jsp" />  
+    </definition> 
+ 
+</tiles-definitions> 
