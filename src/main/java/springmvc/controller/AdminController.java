@@ -61,7 +61,7 @@ public class AdminController {
 		return "redirect:/admin/";
 	}
 	
-	@RequestMapping("home")
+	@RequestMapping("ajax")
 	public String adminAjax() {
 		return "adminAjax";
 	}
