@@ -32,11 +32,11 @@ public class UserDAO {
 	    String sql="DELETE FROM users WHERE id=?";    
 	    return template.update(sql,id);    
 	}    
-	public User getEmpById(int id){    
+	public User getUserById(int id){    
 	    String sql="SELECT * FROM users WHERE id=?";  
 	    return template.queryForObject(sql, new Object[]{id},new UserMapper());    
 	}    
-	public List<User> getEmployees(){    
+	public List<User> getUsers(){    
 	    return template.query("SELECT * FROM users", new UserMapper());
 	}    
 }

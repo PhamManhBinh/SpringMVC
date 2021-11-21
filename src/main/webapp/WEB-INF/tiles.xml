@@ -23,14 +23,9 @@
         <put-attribute name="footer" value="/WEB-INF/user/layouts/_footer.jsp" />  
     </definition>  
     
-    <!-- Login Page -->
-    <definition name="loginPage" extends="user.definition">  
-        <put-attribute name="title" value="Login" />  
-        <put-attribute name="body" value="/WEB-INF/user/views/login.jsp" />  
-    </definition>  
     
     <!-- Home Page User -->
-    <definition name="userHome" extends="admin.definition">  
+    <definition name="userHome" extends="user.definition">  
         <put-attribute name="title" value="Home Page User" />  
         <put-attribute name="body" value="/WEB-INF/user/views/home.jsp" />  
     </definition>  
@@ -57,5 +52,11 @@
         <put-attribute name="title" value="Home Page Admin" />  
         <put-attribute name="body" value="/WEB-INF/admin/views/ajax.jsp" />  
     </definition> 
+    
+    <!-- Error Page -->
+    <definition name="errorPage" extends="admin.definition">  
+        <put-attribute name="title" value="Error" />  
+        <put-attribute name="body" value="/WEB-INF/admin/views/error.jsp" />  
+    </definition>
  
 </tiles-definitions> 

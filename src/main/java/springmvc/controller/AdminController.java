@@ -25,8 +25,9 @@ public class AdminController {
 	
 	@RequestMapping(value={"","/"})
 	public String index(Model model) {
-		List<User> list = userDAO.getEmployees();
+		List<User> list = userDAO.getUsers();
 		model.addAttribute("list",list);  
+		
 		return "adminHome";
 	}
 	
@@ -44,7 +45,7 @@ public class AdminController {
 	
 	@RequestMapping("/editUser/{id}")
 	public String editUser(@PathVariable("id") int id,Model model) {
-		User user = userDAO.getEmpById(id);
+		User user = userDAO.getUserById(id);
 		model.addAttribute("user",user);
 		return "editUser";
 	}
@@ -68,14 +69,14 @@ public class AdminController {
 	
 	@RequestMapping("api/getUsers")
 	public @ResponseBody List<User> getUsers(){
-		List<User> list = userDAO.getEmployees();
+		List<User> list = userDAO.getUsers();
 		return list;
 	}
 	
 	@RequestMapping(value = "api/addUser", method = RequestMethod.POST)
 	public @ResponseBody List<User> addUserApi(@RequestBody User user){
 		userDAO.save(user);
-		List<User> list = userDAO.getEmployees();
+		List<User> list = userDAO.getUsers();
 		return list;
 	}
 }

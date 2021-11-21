@@ -16,12 +16,13 @@ public class WebInitializer implements WebApplicationInitializer {
 
 		AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
 		ctx.scan("springmvc");
-
 		ctx.register(TilesApplicationConfiguration.class);
-
 		container.addListener(new ContextLoaderListener(ctx));
+		
+		DispatcherServlet dispatcherServlet = new DispatcherServlet(ctx);
+		dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
 
-		ServletRegistration.Dynamic servlet = container.addServlet("dispatcher", new DispatcherServlet(ctx));
+		ServletRegistration.Dynamic servlet = container.addServlet("dispatcher", dispatcherServlet);
 		servlet.setLoadOnStartup(1);
 		servlet.addMapping("/");
 	}
